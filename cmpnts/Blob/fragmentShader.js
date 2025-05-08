@@ -21,7 +21,7 @@ void main() {
     color *= shading;
 
     // Dynamic alpha for transparency effect
-    float alpha = smoothstep(0.0, 1.0, 1.2 - length(vUv - 0.5) * 2.0 - distort * 0.8);
+    float alpha = smoothstep(0.0, 1.0, 1.5 - length(vUv - 0.5) * 2.0 - distort * 0.5);
 
     gl_FragColor = vec4(color * vec3(1.2, 0.4, 1.2), alpha);
 }
