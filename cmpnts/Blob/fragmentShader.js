@@ -10,14 +10,14 @@ void main() {
     float distort = vDisplacement * u_intensity * sin(vUv.y * 10.0 + u_time * 0.5);
     
     // Water usually has very little color, maybe a slight blue tint
-    vec3 baseColor = vec3(0.9, 0.9, 0.9); // very subtle blue
+    vec3 baseColor = vec3(0.8, 0.9, 1.0); // very subtle blue
     
     // Add dynamic shading to simulate depth
     float shading = 0.8 + 0.2 * sin(vUv.y * 5.0 + distort * 2.0);
     vec3 color = baseColor * shading;
 
     // Transparent center, fading out to edges
-    float alpha = smoothstep(0.5, 0.0, length(vUv - 0.5) + distort * 0.1);
+    float alpha = smoothstep(0.0, 1.0, 1.5 - length(vUv - 0.5) * 2.0 - distort * 0.5);
 
     // Optional: add a fake "highlight" in the middle
     float highlight = smoothstep(0.02, 0.0, length(vUv - vec2(0.4, 0.4)));
@@ -51,4 +51,6 @@ void main() {
 
     gl_FragColor = vec4(color * vec3(1.2, 0.4, 1.2), alpha);
 }
+
+vec3 baseColor = vec3(0.8, 0.9, 1.0); // very subtle blue
 */
