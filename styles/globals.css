@@ -1,5 +1,5 @@
 body{
-  background-color: white;
+  background-color: black;
 }
 
 .container {
@@ -26,5 +26,5 @@ h1{
   position: absolute;
   font-size: 3rem;
   font-weight: 700;
-  color: black;
+  color: white;
 }
