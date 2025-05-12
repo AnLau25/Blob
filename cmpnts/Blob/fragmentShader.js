@@ -10,7 +10,7 @@ void main() {
     float distort = vDisplacement * u_intensity * sin(vUv.y * 10.0 + u_time * 0.5);
     
     // Water usually has very little color, maybe a slight blue tint
-    vec3 baseColor = vec3(0.8, 0.9, 1.0); // very subtle blue
+    vec3 baseColor = vec3(0.1, 0.3, 0.2); // very subtle blue
     
     // Add dynamic shading to simulate depth
     float shading = 0.8 + 0.2 * sin(vUv.y * 5.0 + distort * 2.0);
@@ -53,4 +53,5 @@ void main() {
 }
 
 vec3 baseColor = vec3(0.8, 0.9, 1.0); // very subtle blue
+.8 .5 1 is pink
 */
